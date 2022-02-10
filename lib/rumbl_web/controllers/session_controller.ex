@@ -17,7 +17,9 @@ defmodule RumblWeb.SessionController do
         |> redirect(to: Routes.page_path(conn, :index))
 
       {:error, _reason} ->
-        conn |> put_flash(:error, "Invalid username/password combination") |> render("new.html")
+        conn
+        |> put_flash(:error, "Invalid username/password combination")
+        |> render("new.html")
     end
   end
 
